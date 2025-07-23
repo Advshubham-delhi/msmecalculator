@@ -95,6 +95,12 @@ document.getElementById('printBtn').addEventListener('click', function () {
   window.print(); // Trigger print dialog
   window.open("https://www.linkedin.com/company/fs-partners-advocates/", "_blank"); // Open LinkedIn in new tab
 });
+window.addEventListener('DOMContentLoaded', () => {
+  const bankRate = parseFloat(document.getElementById('bankRate').value);
+  if (!isNaN(bankRate)) {
+    document.getElementById('interestRate').value = (bankRate * 3).toFixed(2);
+  }
+});
 
 
 
