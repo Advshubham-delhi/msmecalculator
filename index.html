@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interest Calculator | FS & Partners</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <header class="header-content">
+    <img src="./logo.png" alt="Logo" class="logo" />
+    <div class="title-section">
+      <h1>MSME CLAIM CALCULATOR</h1>
+      <p>As per Section 16 of Micro Small and Medium Enterprises Development Act, 2006</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="calculator-form">
+      <div class="input-group">
+        <label for="bankRate">Bank Rate (%)* <a href="https://www.bankbazaar.com/home-loan/repo-rate.html" target="_blank">Check latest rate at this link</a></label>
+        <input type="number" id="bankRate" step="0.01" />
+      </div>
+      <div class="input-group">
+        <label for="interestRate">Interest Rate (3x Bank Rate)</label>
+        <input type="text" id="interestRate" readonly />
+      </div>
+      <div class="input-group">
+        <label for="compounding">Compounding</label>
+        <select id="compounding">
+          <option value="monthly" selected>Monthly Rest</option>
+          <option value="annually">Annually</option>
+        </select>
+      </div>
+      <div id="principal-entries">
+        <div class="principal-row">
+          <input type="number" placeholder="Principal Amount (₹)" class="principal" />
+          <input type="date" class="due-date" title="Date of Invoice + 45 days" />
+        </div>
+      </div>
+      <button type="button" onclick="addRow()">+ Add More Entries</button>
+      <div class="input-group">
+        <label for="endDate">Calculate Interest Up To</label>
+        <input type="date" id="endDate" />
+      </div>
+      <button type="button" id="calculate">Calculate</button>
+      <button type="button" id="printBtn">Print PDF</button>
+    </form>
+
+    <div id="results"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 <a href="https://www.linkedin.com/company/fs-partners-advocates/" target="_blank">FS & Partners (Advocates & Solicitors)</a></p>
+    <p style="font-size: 0.8em; color: #555;">Generated on: <script>document.write(new Date().toLocaleString());</script></p>
+    </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
